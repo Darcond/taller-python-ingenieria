@@ -26,5 +26,3 @@ for codigo in codigos_prueba:
         print(f"{codigo} Válido")
     else:
         print(f"{codigo} Inválido")
-
-#2
