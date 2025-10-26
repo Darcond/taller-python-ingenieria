@@ -1,32 +1,30 @@
-# Base de Datos de Componentes
+# Lista de Diccionarios (cada elemento representa un componente)
 inventario = [
     {
         "id": "S-101",
         "tipo": "Sensor",
-        "ubicacion": "Zona A",
-        "lecturas": [23.5, 24.0, 22.8]
+        "ubicacion": "Torre Norte",
+        "lecturas": [23.4, 25.1, 24.7]
     },
     {
         "id": "M-202",
         "tipo": "Motor",
-        "ubicacion": "Zona B",
-        "lecturas": [1500.0, 1520.5, 1495.3]
+        "ubicacion": "Planta 1",
+        "lecturas": [1500.0, 1498.5, 1502.3]
     },
     {
         "id": "V-303",
         "tipo": "Válvula",
-        "ubicacion": "Zona C",
-        "lecturas": [1.2, 1.3, 1.1]
+        "ubicacion": "Línea Principal",
+        "lecturas": [2.5, 2.6, 2.4]
     }
 ]
 
 # Cálculo del promedio de lecturas para un componente específico
-id_buscar = "S-101"
+id_objetivo = "S-101"
+
 for componente in inventario:
-    if componente["id"] == id_buscar:
-        promedio = sum(componente["lecturas"]) / len(componente["lecturas"])
-        print(f"Promedio de lecturas para {id_buscar}: {promedio}")
+    if componente["id"] == id_objetivo:
+        promedio_lecturas = sum(componente["lecturas"]) / len(componente["lecturas"]) #operación promedio
+        print(f"Promedio de lecturas para el componente {id_objetivo}: {promedio_lecturas:.2f}")
         break
-# Si no se encuentra el componente
-else:
-    print(f"Componente con id {id_buscar} no encontrado.")
